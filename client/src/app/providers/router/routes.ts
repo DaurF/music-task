@@ -1,14 +1,19 @@
-import HomeView from "@/views/HomeView.vue";
+import Home from "@/pages/HomePage.vue";
 
 export const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: Home
   },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import('../../../views/AboutView.vue')
-  // }
+  {
+    path: '/auth',
+    name: 'auth',
+    component: () => import("@/pages/AuthPage.vue")
+  },
+  {
+    path: '/albums/:id',
+    name: 'album',
+    component: () => import("@/pages/AppAlbum.vue")
+  }
 ]
